@@ -5,3 +5,30 @@ This will clear the console output.
 Run the file once while the tasks are longer. 
 
 Copy and paste the terminal results (when task_duration is 3) here.
+PS C:\MS\data_analytics\github\44671_DataStreaming\streaming-02-multiple-processes> & C:/Users/kamal/AppData/Local/Programs/Python/Python312/python.exe c:/MS/data_analytics/github/44671_DataStreaming/streaming-02-multiple-processes/multiple_processes.py
+2024-05-06 23:01:28,544 - INFO - 
+======================================================================
+STARTING UP.............................
+  Date and Time:    2024-05-06 at 11:01 PM
+  Operating System: nt Windows 11
+  Python Version:   3.12.1
+  Path to Interpreter:  C:\Users\kamal\AppData\Local\Programs\Python\Python312\python.exe
+======================================================================
+
+2024-05-06 23:01:28,544 - INFO - Called recreate_database().
+2024-05-06 23:01:28,544 - INFO - Called drop_table().
+2024-05-06 23:01:28,603 - INFO - Table 'pets' dropped successfully.
+2024-05-06 23:01:28,608 - INFO - Called create_table().
+2024-05-06 23:01:28,634 - INFO - Table 'pets' created successfully.
+2024-05-06 23:01:28,787 - INFO - Called process_three().
+2024-05-06 23:01:28,787 - INFO -   Called insert_pet() with process=P3, name=Emma, breed=Rabbit.
+2024-05-06 23:01:28,795 - INFO - Called process_one().
+2024-05-06 23:01:28,795 - INFO - Called process_two().
+2024-05-06 23:01:28,795 - INFO -   Called insert_pet() with process=P1, name=Ace, breed=Dog.
+2024-05-06 23:01:28,795 - INFO -   Called insert_pet() with process=P2, name=Cooper, breed=Rabbit.
+2024-05-06 23:01:31,880 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
+2024-05-06 23:01:34,369 - ERROR - ERROR while P2 inserting pet Cooper: database is locked
+2024-05-06 23:01:34,371 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
+2024-05-06 23:01:34,386 - ERROR - ERROR while P1 inserting pet Ace: database is locked
+2024-05-06 23:01:34,387 - INFO -   Called insert_pet() with process=P1, name=Buddy, breed=Dog.
+PS C:\MS\data_analytics\github\44671_DataStreaming\streaming-02-multiple-processes> 
