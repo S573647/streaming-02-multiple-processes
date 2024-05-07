@@ -51,22 +51,22 @@ Try to figure out what's going on.
 
    `six functions defined in the script.`
 4. What are the function names? 
-   `recreate_database`
-   `create_table`
-   `drop_table`
-   `insert_pet`
-   `process_one`
-   `process_two`
-   `process_three`
+   1. recreate_database
+   1.  create_table
+   1. drop_table
+   1. insert_pet
+   1. process_one
+   1. process_two
+   1. process_three
 5. In general, what does each function do? 
 
-    `recreate_database: Drops and recreates the database.`
-    `create_table: Creates a table in the database.`
-    `drop_table: Drops the table if it exists.`
-    `insert_pet: Inserts a pet into the "pets" table of the database.`
-    `process_one: Simulates a process inserting pets into the database.`
-    `process_two: Simulates another process inserting pets into the database.`
-    `process_three: Simulates yet another process inserting pets into the database.`
+    1. recreate_database: Drops and recreates the database.
+    1. create_table: Creates a table in the database.
+    1. drop_table: Drops the table if it exists.
+    1. insert_pet: Inserts a pet into the "pets" table of the database.
+    1. process_one: Simulates a process inserting pets into the database.
+    1. process_two: Simulates another process inserting pets into the database.
+    1. process_three: Simulates yet another process inserting pets into the dataase.
 
 6. Where does the execution begin? Hint: generally at the end of the file.
 
@@ -74,22 +74,22 @@ Try to figure out what's going on.
 8. How many processes do we start?
 
    `Three processes are started using multiprocessing.Process().`
-    `p1 = multiprocessing.Process(target=process_one)`
-    `p2 = multiprocessing.Process(target=process_two)`
-    `p3 = multiprocessing.Process(target=process_three)`
+    1. p1 = multiprocessing.Process(target=process_one)
+    1. p2 = multiprocessing.Process(target=process_two)
+    1. p3 = multiprocessing.Process(target=process_three)
 9. How many records does each process insert?
 
     `Each process inserts two records into the "pets" table of the database. So, each process inserts two records.`
 
-    `In this first run, we start 3 processes,` 
-    `each inserting 2 records into a shared database `
-    `(for a total of 6 records inserted.) if TASK_DURATION_SECONDS = 0 or 1`
+    - In this first run, we start 3 processes,
+    - each inserting 2 records into a shared database 
+    - (for a total of 6 records inserted.) if TASK_DURATION_SECONDS = 0 or 1
 
-    `In each case, the process gets a connection to the database, 
-    and a cursor to execute SQL statements.
-    It inserts a record, and exits the database quickly.
+    - In each case, the process gets a connection to the database, 
+    - and a cursor to execute SQL statements.
+    - It inserts a record, and exits the database quickly.
 
-    In general, we're successful and six new records get inserted. `
+    - In general, we're successful and six new records get inserted. 
 
 ## Task 6. Execute Multiple Processes Script with Longer Tasks
 
@@ -102,11 +102,11 @@ then when another process tries to do the same, it can't and
 we end up with errors. 
 
 `yes I had errors when i increase the task duration equal or more than 3 , `
-`2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked`
-`2024-05-06 22:53:14,359 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.`
-`2024-05-06 22:53:14,405 - ERROR - ERROR while P2 inserting pet Cooper: database is locked`
-`2024-05-06 22:53:14,406 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.`
-`2024-05-06 22:53:19,970 - ERROR - ERROR while P2 inserting pet Dingo: database is locked`
+`2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked
+2024-05-06 22:53:14,359 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
+2024-05-06 22:53:14,405 - ERROR - ERROR while P2 inserting pet Cooper: database is locked
+2024-05-06 22:53:14,406 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
+2024-05-06 22:53:19,970 - ERROR - ERROR while P2 inserting pet Dingo: database is locked`
 
 ## Task 7. Document Results After Each Run
 
