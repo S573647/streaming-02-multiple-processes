@@ -46,50 +46,50 @@ Try to figure out what's going on.
    `libraries imported  datetime ,logging,multiprocessing, os, platform, sqlite3, sys, time`
 2. Where do we set the TASK_DURATION_SECONDS?
 
-   TASK_DURATION_SECONDS program constants and it is set at the beginning of the script, right after the import statements 
+   `TASK_DURATION_SECONDS program constants and it is set at the beginning of the script, right after the import statements `
 3. How many functions are defined? 
 
-   six functions defined in the script.
+   `six functions defined in the script.`
 4. What are the function names? 
-   recreate_database
-   create_table
-   drop_table
-   insert_pet
-   process_one
-   process_two
-   process_three
+   `recreate_database`
+   `create_table`
+   `drop_table`
+   `insert_pet`
+   `process_one`
+   `process_two`
+   `process_three`
 5. In general, what does each function do? 
 
-    recreate_database: Drops and recreates the database.
-    create_table: Creates a table in the database.
-    drop_table: Drops the table if it exists.
-    insert_pet: Inserts a pet into the "pets" table of the database.
-    process_one: Simulates a process inserting pets into the database.
-    process_two: Simulates another process inserting pets into the database.
-    process_three: Simulates yet another process inserting pets into the database.
+    `recreate_database: Drops and recreates the database.`
+    `create_table: Creates a table in the database.`
+    `drop_table: Drops the table if it exists.`
+    `insert_pet: Inserts a pet into the "pets" table of the database.`
+    `process_one: Simulates a process inserting pets into the database.`
+    `process_two: Simulates another process inserting pets into the database.`
+    `process_three: Simulates yet another process inserting pets into the database.`
 
 6. Where does the execution begin? Hint: generally at the end of the file.
 
-   The execution begins at the block labeled "If this is the script we are running..." which is the if __name__ == "__main__": block at the end of the script.
+   `The execution begins at the block labeled "If this is the script we are running..." which is the if __name__ == "__main__": block at the end of the script.`
 8. How many processes do we start?
 
-   Three processes are started using multiprocessing.Process().
-    p1 = multiprocessing.Process(target=process_one)
-    p2 = multiprocessing.Process(target=process_two)
-    p3 = multiprocessing.Process(target=process_three)
+   `Three processes are started using multiprocessing.Process().`
+    `p1 = multiprocessing.Process(target=process_one)`
+    `p2 = multiprocessing.Process(target=process_two)`
+    `p3 = multiprocessing.Process(target=process_three)`
 9. How many records does each process insert?
 
-    Each process inserts two records into the "pets" table of the database. So, each process inserts two records.
+    `Each process inserts two records into the "pets" table of the database. So, each process inserts two records.`
 
-    In this first run, we start 3 processes, 
-    each inserting 2 records into a shared database 
-    (for a total of 6 records inserted.) if TASK_DURATION_SECONDS = 0 or 1
+    `In this first run, we start 3 processes,` 
+    `each inserting 2 records into a shared database `
+    `(for a total of 6 records inserted.) if TASK_DURATION_SECONDS = 0 or 1`
 
-    In each case, the process gets a connection to the database, 
+    `In each case, the process gets a connection to the database, 
     and a cursor to execute SQL statements.
     It inserts a record, and exits the database quickly.
 
-    In general, we're successful and six new records get inserted. 
+    In general, we're successful and six new records get inserted. `
 
 ## Task 6. Execute Multiple Processes Script with Longer Tasks
 
@@ -101,12 +101,12 @@ one process will have the database open and be working on it -
 then when another process tries to do the same, it can't and 
 we end up with errors. 
 
-yes I had errors when i increase the task duration equal or more than 3 , 
-2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked
-2024-05-06 22:53:14,359 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
-2024-05-06 22:53:14,405 - ERROR - ERROR while P2 inserting pet Cooper: database is locked
-2024-05-06 22:53:14,406 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
-2024-05-06 22:53:19,970 - ERROR - ERROR while P2 inserting pet Dingo: database is locked
+`yes I had errors when i increase the task duration equal or more than 3 , `
+`2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked`
+`2024-05-06 22:53:14,359 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.`
+`2024-05-06 22:53:14,405 - ERROR - ERROR while P2 inserting pet Cooper: database is locked`
+`2024-05-06 22:53:14,406 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.`
+`2024-05-06 22:53:19,970 - ERROR - ERROR while P2 inserting pet Dingo: database is locked`
 
 ## Task 7. Document Results After Each Run
 
@@ -118,11 +118,11 @@ To document results, clear the terminal, run the script, and paste all of the te
 
 Use out0.txt to document the first run. 
 
-updated the file out0 for 0 task duration 
+`updated the file out0 for 0 task duration `
 
 Use out3.txt to document the second run.
 
-updated the file out3.txt for 3 task duration
+`updated the file out3.txt for 3 task duration`
 
 
 -----
