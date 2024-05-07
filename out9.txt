@@ -1,0 +1,7 @@
+Student Name,Course,Grade
+Alice,Mathematics,65.28
+Alice,Science,91.52
+Alice,History,67.36
+Alice,English,66.66
+Alice,Computer Science,85.52
+Bob,Mathematics,61.84
