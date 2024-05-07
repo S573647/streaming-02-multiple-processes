@@ -102,7 +102,7 @@ then when another process tries to do the same, it can't and
 we end up with errors. 
 
 `yes I had errors when i increase the task duration equal or more than 3 , `
-`2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked
+-   `2024-05-06 22:53:14,358 - ERROR - ERROR while P3 inserting pet Emma: database is locked
 2024-05-06 22:53:14,359 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
 2024-05-06 22:53:14,405 - ERROR - ERROR while P2 inserting pet Cooper: database is locked
 2024-05-06 22:53:14,406 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
