@@ -42,7 +42,7 @@ Read the output. Read the code.
 Try to figure out what's going on. 
 
 1. What libraries did we import?
-# import datetime ,logging,multiprocessing, os, platform, sqlite3, sys, time
+### import datetime ,logging,multiprocessing, os, platform, sqlite3, sys, time
 2. Where do we set the TASK_DURATION_SECONDS?
 # TASK_DURATION_SECONDS program constants and it is set at the beginning of the script, right after the import statements 
 3. How many functions are defined? 
